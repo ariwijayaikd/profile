@@ -10,7 +10,7 @@ export const socialLinks = [
     label: 'GitHub',
   },
   {
-    href: '/I%20KADEK%20ARI%20WIJAYA_Curriculum%20Vitae_June.pdf',
+    href: '/I_KADEK_ARI_WIJAYA-Curriculum_Vitae.pdf',
     icon: 'fas fa-file-pdf',
     label: 'CV',
   },

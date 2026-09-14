@@ -416,6 +416,25 @@ body {
   font-weight: bold;
 }
 
+.experience__impact {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: rgba(102, 126, 234, 0.08);
+  color: var(--body);
+  line-height: 1.7;
+}
+
+.experience__impact-label {
+  color: var(--text);
+  font-weight: 600;
+}
+
+[data-theme='dark'] .experience__impact {
+  background: rgba(102, 126, 234, 0.14);
+}
+
 .btn {
   padding: 12px 30px;
   border-radius: var(--radius);

@@ -26,6 +26,11 @@ export default function Experience() {
                   <li key={highlight}>{highlight}</li>
                 ))}
               </ul>
+
+              <p className="experience__impact">
+                <span className="experience__impact-label">Impact:</span>{' '}
+                {item.impact}
+              </p>
             </article>
           ))}
         </div>
