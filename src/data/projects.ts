@@ -1,4 +1,5 @@
 import kemdiktisaintekThumb from '../assets/kemdiktisaintek.jpg'
+import pddiktiAdminThumb from '../assets/pddikti-admin.jpg'
 import pddiktiThumb from '../assets/pddikti.jpg'
 
 export interface Project {
@@ -62,5 +63,23 @@ export const projects: Project[] = [
     image: pddiktiThumb,
     liveUrl: 'https://pddikti.kemdiktisaintek.go.id/',
     featured: true,
+  },
+  {
+    id: 'pddikti-admin',
+    title: 'PDDikti Admin',
+    description: 'PDDikti Administration Portal',
+    role: 'Penetration Tester / Security Remediation',
+    highlights: [
+      'Performed authorized penetration testing to identify application vulnerabilities and security weaknesses.',
+      'Documented findings with supporting evidence, potential impact, and recommended remediation steps.',
+      'Implemented fixes for identified findings in coordination with the development team.',
+      'Retested resolved findings to validate remediation and identify any remaining security risks.',
+    ],
+    impact:
+      'Reduced application security risk by turning penetration test findings into verified fixes, improving the security posture and resilience of the PDDikti administration portal.',
+    tech: [],
+    icon: 'fas fa-shield-halved',
+    image: pddiktiAdminThumb,
+    liveUrl: 'https://pddikti-admin.kemdiktisaintek.go.id',
   },
 ]
