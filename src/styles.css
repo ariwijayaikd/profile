@@ -278,6 +278,65 @@ body {
   transform: translateY(-3px);
 }
 
+/* GitHub stats */
+.github-stats {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.github-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.github-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.25rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 5px 15px var(--shadow);
+  transition: var(--transition);
+}
+
+.github-stat:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
+
+.github-stat__icon {
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.github-stat__value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.github-stat__label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.github-stats__langs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 .hero__eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.12em;
