@@ -38,6 +38,7 @@ export const projects: Project[] = [
     tech: [],
     icon: 'fas fa-building-columns',
     image: ditjenDiktiThumb,
+    liveUrl: 'https://dikti.kemdiktisaintek.go.id',
   },
   {
     id: 'ppid',
@@ -46,6 +47,7 @@ export const projects: Project[] = [
     tech: [],
     icon: 'fas fa-circle-info',
     image: ppidThumb,
+    liveUrl: 'https://ppid.kemdiktisaintek.go.id/',
   },
   {
     id: 'pddikti',
