@@ -1,4 +1,3 @@
-import grafanaK6Thumb from '../assets/grafanak6.svg'
 import kemdiktisaintekThumb from '../assets/kemdiktisaintek.jpg'
 import pddiktiThumb from '../assets/pddikti.jpg'
 
@@ -63,25 +62,5 @@ export const projects: Project[] = [
     image: pddiktiThumb,
     liveUrl: 'https://pddikti.kemdiktisaintek.go.id/',
     featured: true,
-  },
-  {
-    id: 'grafana-k6',
-    title: 'Grafana k6 Testing Dashboard UI',
-    description:
-      'A web-based interface for running, organizing, and visualizing performance test results using Grafana k6.',
-    role: 'DevOps Engineer / Tooling Developer',
-    highlights: [
-      'Designed a web UI to simplify performance testing workflows.',
-      'Integrated Grafana k6 testing flow into a more accessible interface.',
-      'Helped visualize test results for easier analysis and reporting.',
-      'Supported performance testing activities for application readiness.',
-    ],
-    impact:
-      'Made performance testing easier to run, review, and communicate by providing a clearer interface for test execution and result visualization.',
-    tech: [],
-    icon: 'fas fa-chart-line',
-    image: grafanaK6Thumb,
-    imageFit: 'contain',
-    repoUrl: 'https://github.com/ariwijayaikd/grafana-k6',
   },
 ]
