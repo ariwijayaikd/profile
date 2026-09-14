@@ -2,23 +2,20 @@ import { useEffect, useState } from 'react'
 
 const GITHUB_USERNAME = 'ariwijayaikd'
 
-interface GitHubUser {
-  public_repos: number
-  followers: number
-  following: number
+interface ContributionsResponse {
+  total: { lastYear: number }
+  contributions: ContributionDay[]
 }
 
-interface GitHubRepo {
-  stargazers_count: number
-  language: string | null
+export interface ContributionDay {
+  date: string
+  count: number
+  level: number
 }
 
 export interface GitHubStats {
-  repos: number
-  stars: number
-  followers: number
-  following: number
-  topLanguages: string[]
+  contributions: number | null
+  contributionDays: ContributionDay[]
 }
 
 export function useGitHubStats() {
@@ -31,50 +28,22 @@ export function useGitHubStats() {
 
     async function load() {
       try {
-        const [userRes, reposRes] = await Promise.all([
-          fetch(`https://api.github.com/users/${GITHUB_USERNAME}`, {
-            signal: controller.signal,
-          }),
-          fetch(
-            `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`,
-            { signal: controller.signal },
-          ),
-        ])
-
-        if (!userRes.ok || !reposRes.ok) {
-          throw new Error(
-            `GitHub API responded with ${userRes.status}/${reposRes.status}`,
-          )
-        }
-
-        const user = (await userRes.json()) as GitHubUser
-        const repos = (await reposRes.json()) as GitHubRepo[]
-
-        const stars = repos.reduce(
-          (total, repo) => total + repo.stargazers_count,
-          0,
+        const res = await fetch(
+          `https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=last`,
+          { signal: controller.signal },
         )
 
-        const languageCounts = new Map<string, number>()
-        for (const repo of repos) {
-          if (!repo.language) continue
-          languageCounts.set(
-            repo.language,
-            (languageCounts.get(repo.language) ?? 0) + 1,
-          )
+        if (!res.ok) {
+          throw new Error(`Contributions API responded with ${res.status}`)
         }
 
-        const topLanguages = [...languageCounts.entries()]
-          .sort((a, b) => b[1] - a[1])
-          .slice(0, 3)
-          .map(([language]) => language)
+        const data = (await res.json()) as ContributionsResponse
+
+        if (controller.signal.aborted) return
 
         setStats({
-          repos: user.public_repos,
-          stars,
-          followers: user.followers,
-          following: user.following,
-          topLanguages,
+          contributions: data.total.lastYear,
+          contributionDays: data.contributions,
         })
       } catch (err) {
         if (controller.signal.aborted) return
