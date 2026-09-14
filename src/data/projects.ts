@@ -1,6 +1,8 @@
+import ditjenDiktiThumb from '../assets/ditjen-dikti.jpg'
 import kemdiktisaintekThumb from '../assets/kemdiktisaintek.jpg'
 import pddiktiAdminThumb from '../assets/pddikti-admin.jpg'
 import pddiktiThumb from '../assets/pddikti.jpg'
+import ppidThumb from '../assets/ppid.jpg'
 
 export interface Project {
   id: string
@@ -28,6 +30,22 @@ export const projects: Project[] = [
     icon: 'fas fa-landmark',
     image: kemdiktisaintekThumb,
     liveUrl: 'https://kemdiktisaintek.go.id',
+  },
+  {
+    id: 'ditjen-dikti',
+    title: 'Ditjen Dikti',
+    description: 'Portal Direktorat Jenderal Pendidikan Tinggi',
+    tech: [],
+    icon: 'fas fa-building-columns',
+    image: ditjenDiktiThumb,
+  },
+  {
+    id: 'ppid',
+    title: 'PPID Kemdiktisaintek',
+    description: 'Public Information and Documentation Portal',
+    tech: [],
+    icon: 'fas fa-circle-info',
+    image: ppidThumb,
   },
   {
     id: 'pddikti',
