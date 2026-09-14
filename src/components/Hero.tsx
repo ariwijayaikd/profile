@@ -1,5 +1,4 @@
 import { socialLinks } from '../data/socialLinks'
-import GitHubStats from './GitHubStats'
 
 export default function Hero() {
   return (
@@ -50,8 +49,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
-        <GitHubStats />
       </div>
     </section>
   )
